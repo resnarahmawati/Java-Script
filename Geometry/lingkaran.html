@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Lingkaran</h3>
+    <label for="jari">Jari-jari</label>
+    <input type="number" id="jari">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Keliling : <span id="keliling">0</span>
+    </p>
+    <p>
+        Luas     : <span id="luas">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const PHI = 3.14
+        const jari = document.getElementById('jari');
+        const labelKeliling = document.getElementById('keliling');
+        const labelLuas = document.getElementById('luas');
+        
+
+        button.addEventListener("click", function () {
+          let keliling = parseInt(2 * PHI * (jari.value))
+          labelKeliling.textContent = keliling + " cm"
+
+          let luas = parseInt(jari.value) * (jari.value) * 3.14
+          labelLuas.textContent = luas + " cm2"
+        })
+    </script>
+</body>
+</html>

@@ -6,28 +6,30 @@
     <title>Document</title>
 </head>
 <body>
+    <h3>Tabung</h3>
     <label for="jari">Jari-jari</label>
-    <input type="number" name="" id="jari">
-    <button>Hitung</button>
+    <input type="number" id="jari">
+    <button id="button" type="button">Hitung</button>
     <p>
-        Keliling : <span id="keliling"></span>
+        Keliling : <span id="keliling">0</span>
     </p>
     <p>
-        Luas     : <span id="luas">luas</span>
+        Luas     : <span id="luas">0</span>
     </p>
     <script>
+        const button = document.getElementById("button");
         const PHI = 3.14
-        const jari = document.getElementById('jari')
-        const hitung = document.getElementById('hitung')
-        const labelKeliling = document.getElementById('keliling')
-        const labelLuas = document.getElementById('luas')
+        const jari = document.getElementById('jari');
+        const labelKeliling = document.getElementById('keliling');
+        const labelLuas = document.getElementById('luas');
+        
 
-        hitung.addEventListener('click', function(){
+        button.addEventListener("click", function () {
           let keliling = parseInt(jari.value) * 2 * PHI
           labelKeliling.textContent = keliling + " cm"
 
-          let luas = parseInt(luas.value) ** 2 * PHI
-          labelLuas.innerHTML = luas + " cm<sup>2</sup>"
+          let luas = parseInt(jari.value) ** 2 * PHI
+          labelLuas.textContent = luas + " cm2"
         })
     </script>
 </body>

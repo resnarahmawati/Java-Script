@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h3>Debit</h3>
+    <label for="volume">Volume</label>
+    <input type="number" id="volume">
+    <br><label for="waktu">Waktu </label>
+    <input type="number" id="waktu">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Debit : <span id="debit">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const volume = document.getElementById("volume");
+        const waktu = document.getElementById("waktu")
+        const labelDebit = document.getElementById("debit");
+
+        button.addEventListener("click", function () {
+          let debit = parseFloat((volume.value) / (waktu.value))
+          labelDebit.textContent = debit + " cm2"
+        })
+    </script>
+</body>
+</html>

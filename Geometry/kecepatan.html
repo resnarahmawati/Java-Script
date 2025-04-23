@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h3>Kecepatan</h3>
+    <label for="jarak">Jarak</label>
+    <input type="number" id="jarak">
+    <br><label for="waktu">Waktu </label>
+    <input type="number" id="waktu">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Kecepatan : <span id="kecepatan">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const jarak = document.getElementById("jarak");
+        const waktu = document.getElementById("waktu")
+        const labelKecepatan = document.getElementById("kecepatan");
+
+        button.addEventListener("click", function () {
+          let kecepatan = parseFloat((jarak.value) / (waktu.value))
+          labelKecepatan.textContent = kecepatan + " cm2"
+        })
+    </script>
+</body>
+</html>

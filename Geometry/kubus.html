@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h3>Kubus</h3>
+    <label for="rusuk">Rusuk</label>
+    <input type="number" id="rusuk">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Volume : <span id="volume">0</span>
+    </p>
+    <p>
+        Luas     : <span id="luas">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const rusuk = document.getElementById('rusuk');
+        const labelVolume = document.getElementById('volume');
+        const labelLuas = document.getElementById('luas');
+
+        button.addEventListener("click", function () {
+          let volume = parseInt(rusuk.value) ** 3
+          labelVolume.textContent = volume + " cm"
+
+          let luas = parseInt(4*(rusuk.value) ** 2) 
+          labelLuas.textContent = luas + " cm"
+        })
+    </script>
+</body>
+</html>

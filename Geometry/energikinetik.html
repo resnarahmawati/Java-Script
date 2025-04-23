@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h3>Energi Kinetik</h3>
+    <label for="massa">Massa (kg) </label>
+    <input type="number" id="massa">
+    <br><label for="kecepatan">Kecepatan </label>
+    <input type="number" id="kecepatan">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Energi Kinetik : <span id="ek">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const massa = document.getElementById("massa");
+        const kecepatan = document.getElementById("kecepatan");
+        const labelEk = document.getElementById("ek");
+
+        button.addEventListener("click", function () {
+          let ek = parseFloat(1/2 * (massa.value) * (kecepatan.value) ** 2)
+          labelEk.textContent = ek + " cm2"
+        })
+    </script>
+</body>
+</html>

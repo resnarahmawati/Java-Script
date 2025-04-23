@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h3>Layang-layang</h3>
+    <label for="d1">D1</label>
+    <input type="number" id="d1">
+    <br><label for="d2">D2 </label>
+    <input type="number" id="d2">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Luas : <span id="luas">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const d1 = document.getElementById("d1");
+        const d2 = document.getElementById("d2");
+        const labelLuas = document.getElementById("luas");
+
+        button.addEventListener("click", function () {
+          let luas = parseFloat(1/2 * (d1.value) * (d2.value))
+          labelLuas.textContent = luas + " cm2"
+        })
+    </script>
+</body>
+</html>
