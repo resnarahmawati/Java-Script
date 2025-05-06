@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="kelulusan">
+    <h3>PROGRAM KATEGORI USIA</h3>
+    <label>Masukkan Usia</label>
+    <input type="number" id="nilai">
+    <p><span id="output"></span></p>
+  </div>
+  <input type="button" value="Submit" id="Proses" onclick="InputOutput()" />
+
+  <script>
+    function InputOutput() {
+      const nilai = document.getElementById("nilai").value;
+      const labelOutput = document.getElementById("output");
+      
+      if (nilai >= 0 && nilai <= 12) {
+      labelOutput.textContent = "Kategori: Anak-anak";
+      } else if (nilai >= 13 && nilai <= 19) {
+      labelOutput.textContent = "Kategori: Remaja";
+      } else if (nilai >= 20 && nilai <= 50) {
+      labelOutput.textContent = "Kategori: Dewasa";
+      } else if (nilai >= 51) {
+      labelOutput.textContent = "Kategori: Lansia";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="kelulusan">
+    <h3>PROGRAM LAMPU LALULINTAS</h3>
+    <label>Masukkan Warna Lampu</label>
+    <input type="text" id="nilai">
+    <p><span id="output"></span></p>
+  </div>
+  <input type="button" value="Submit" id="Proses" onclick="InputOutput()" />
+
+  <script>
+    function InputOutput() {
+      const nilai = document.getElementById("nilai").value;
+      const labelOutput = document.getElementById("output");
+      
+      if (nilai == "merah") {
+      labelOutput.textContent = "Berhenti !";
+      } else if (nilai == "kuning") {
+      labelOutput.textContent = "Bersiap !"
+      } else if (nilai == "hijau") {
+        labelOutput.textContent = "Jalan !"
+      } else {
+        labelOutput.textContent("Tidak terdapat warna tersebut!")
+      }
+  }
+  </script>
+</body>
+</html>

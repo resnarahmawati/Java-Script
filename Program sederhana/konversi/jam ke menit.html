@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Belajar JavaScript</title>
+</head>
+<body>
+    <div class="tengah">
+        <div class="text">
+            <h3>KONVERSI JAM KE MENIT</h3>
+            <p></p>
+        </div>
+
+        <label>Masukkan Angka jam </label>
+        <input type="number" id="txtInput" />
+        <p></p>
+        
+        <p>
+            <span id="txtOutput"></span>
+        </p>
+
+        <input type="button" value="Submit" id="Proses" onclick="InputOutput()" />
+
+        <script>
+          function InputOutput(){
+          const input = document.getElementById("txtInput");
+          const labelOutput = document.getElementById("txtOutput");
+          const menit = input.value * 60;
+          let output = (input.value) + " jam sama dengan " + (menit) + " menit.";
+          labelOutput.innerHTML = output
+        }
+        </script>
+    </div>
+</body>
+</html>

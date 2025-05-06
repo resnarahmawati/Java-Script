@@ -1,6 +1,4 @@
-function InputOutput()
-     {
-        var x;
-        x = document.getElementById("txtInput").value;
-        document.getElementById("txtOutput").value = x;
-            }
+function InputOutput() {
+    const input = document.getElementById("txtInput").value;
+    document.getElementById("txtOutput").value = input;
+}

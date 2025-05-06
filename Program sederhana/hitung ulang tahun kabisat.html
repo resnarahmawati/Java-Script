@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hitung Ulang Tahun Kabisat</title>
+</head>
+<body>
+  <div id="kelulusan">
+    <h3>PROGRAM BERAPA KALI ULANG TAHUN TANGGAL 29 FEB (KABISAT)</h3>
+    <label>Masukkan Tahun Lahir</label>
+    <input type="number" id="tahunLahir">
+    <p><span id="output"></span></p>
+  </div>
+  <input type="button" value="Submit" id="Proses" onclick="InputOutput()" />
+
+  <script>
+    function InputOutput() {
+      const tahunLahir = parseInt(document.getElementById("tahunLahir").value);
+      const labelOutput = document.getElementById("output");
+      const tahunAkhir = 2025;
+
+      if (isNaN(tahunLahir)) {
+        labelOutput.textContent = "Mohon masukkan tahun lahir yang valid.";
+        return;
+      }
+
+      if (tahunAkhir <= tahunLahir) {
+        labelOutput.textContent = "Tahun akhir harus lebih besar dari tahun lahir.";
+        return;
+      }
+
+      let ulangTahun = 0;
+
+      for (let tahun = tahunLahir + 1; tahun <= tahunAkhir; tahun++) {
+        if ((tahun % 4 === 0 && tahun % 100 !== 0) || (tahun % 400 === 0)) {
+          ulangTahun++;
+        }
+      }
+
+      labelOutput.textContent = `Jumlah ulang tahun yang bisa dirayakan pada 29 Februari sejak tahun ${tahunLahir} hingga ${tahunAkhir} adalah sebanyak ${ulangTahun} kali.`;
+    }
+  </script>
+</body>
+</html>
