@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h3>PROGRAM MATEMATIKA JARAK</h3>
+    <label for="k">Masukkan Kecepatan </label>
+    <br><input type="number" id="k">
+    <br><label for="w">Masukkan Waktu </label>
+    <br><input type="number" id="w">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Jarak : <span id="jarak">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const waktu = document.getElementById("w");
+        const kecepatan = document.getElementById("k");
+        const labelJarak = document.getElementById("jarak");
+
+        button.addEventListener("click", function () {
+          let jarak = parseFloat((k.value)*(w.value))
+          labelJarak.textContent = jarak
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="kelulusan">
+    <h3>PROGRAM MENENTUKAN DIGIT ANGKA APAKAH TERMASUK PULUHAN,RATUSAN ATAU RIBUAN</h3>
+    <label>Masukkan Angka</label>
+    <input type="number" id="nilai">
+    <p><span id="output"></span></p>
+  </div>
+  <input type="button" value="Submit" id="Proses" onclick="InputOutput()" />
+
+  <script>
+    function InputOutput() {
+      const nilai = document.getElementById("nilai").value;
+      const labelOutput = document.getElementById("output");
+      
+      if (nilai >= 10 && nilai <= 99) {
+      labelOutput.textContent = "ANGKA INI TERMASUK PULUHAN";
+      } else if (nilai >= 100 && nilai < 1000) {
+      labelOutput.textContent = "ANGKA INI TERMASUK RATUSAN";
+      } else if (nilai >= 1000 && nilai <1000000) {
+      labelOutput.textContent = "ANGKA INI TERMASUK RIBUAN";
+      } else if (nilai >= 1000000 && nilai < 100000000) {
+      labelOutput.textContent = "ANGKA INI TERMASUK JUTAAN";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="grade">
+    <h3>PROGRAM INPUT NILAI</h3>
+    <label for="nilai">Masukkan Nilai UAS</label>
+    <input type="number" id="nilai">
+    <label for="tugas">Masukkan Nilai tugas</label>
+    <input type="number" id="tugas">
+    <p><span id="output"></span></p>
+  </div>
+  <input type="button" value="Submit" id="Proses" onclick="InputOutput()" />
+
+  <script>
+    function InputOutput() {
+      const nilai = document.getElementById("nilai").value;
+      const tugas = document.getElementById("tugas").value;
+      const labelOutput = document.getElementById("output");
+      let grade = parseInt(nilai) + parseInt(tugas);
+      let hasil = grade / 2;
+      
+      if (hasil >= 85) {
+      labelOutput.textContent = "Hasilnya adalah " + hasil + " termasuk kedalam Grade A";
+      } else if (hasil >= 70 && hasil <= 84) {
+      labelOutput.textContent = "Hasilnya adalah " + hasil + " termasuk kedalam  Grade B";
+      } else if (hasil >= 60 && hasil <= 69) {
+      labelOutput.textContent = "Hasilnya adalah " + hasil + " termasuk kedalam Grade C";
+      } else if (hasil <= 59) {
+      labelOutput.textContent = "Hasilnya adalah" + hasil + " termasuk kedalam Grade D";
+      }
+    }
+  </script>
+</body>
+</html>
