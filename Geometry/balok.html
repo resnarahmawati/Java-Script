@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Balok</h3>
+    <label for="tinggi">Masukkan Tinggi</label>
+    <br><input type="number" id="tinggi">
+    <br><label for="lebar">Masukkan Lebar</label>
+    <br><input type="number" id="lebar">
+    <br><label for="panjang">Masukkan Panjang</label>
+    <br><input type="number" id="panjang">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Volume : <span id="volume">0</span>
+    </p>
+    <p>
+        Luas Permukaan     : <span id="luas">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const tinggi = document.getElementById('tinggi');
+        const lebar = document.getElementById('lebar');
+        const panjang = document.getElementById('panjang');
+        const labelKeliling = document.getElementById('keliling');
+        const labelLuas = document.getElementById('luas');
+        
+
+        button.addEventListener("click", function () {
+          let keliling = parseInt(4*(lebar.value)*(tinggi.value))
+          labelKeliling.innerHTML = keliling + " cm<sup>2</sup>"
+
+          let luas = parseInt(2*((panjang.value)*(lebar.value))+((panjang.value)*(tinggi.value))+((lebar.value)*(tinggi.value)))
+          labelLuas.innerHTML = luas + " cm<sup>2</sup>"
+        })
+    </script>
+</body>
+</html>

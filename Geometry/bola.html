@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h3>Bola</h3>
+    <label for="r">Masukkan Jari-jari Bola</label>
+    <input type="number" id="r">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Volume : <span id="volume">0</span>
+    </p>
+    <p>
+        Luas Permukaan    : <span id="luas">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const r = document.getElementById('r');
+        const labelVolume = document.getElementById('volume');
+        const labelLuas = document.getElementById('luas');
+        const PHI = 3.14
+
+        button.addEventListener("click", function () {
+          let volume = parseInt((4/3)*PHI*(r.value)*2)
+          labelVolume.innerHTML = volume + " cm<sup>3</sup>"
+
+          let luas = parseInt(4*PHI*(r.value)*3) 
+          labelLuas.innerHTML = luas + " cm<sup>2</sup>"
+        })
+    </script>
+</body>
+</html>

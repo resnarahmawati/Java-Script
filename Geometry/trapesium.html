@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Program Jajar Genjang</h3>
+    <label for="a">Masukkan sisi a</label>
+    <br><input type="number" id="a">
+    <br><label for="b">Masukkan sisi b</label>
+    <br><input type="number" id="b">
+    <br><label for="c">Masukkan sisi c</label>
+    <br><input type="number" id="c">
+    <br><label for="d">Masukkan sisi d</label>
+    <br><input type="number" id="d">
+    <br><label for="tinggi">Masukkan Tinggi</label>
+    <br><input type="number" id="tinggi">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Luas Trapesium     : <span id="luas">0</span>
+    </p>
+    <p>
+        Keliling Trapesium     : <span id="keliling">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const a = document.getElementById('a');
+        const tinggi = document.getElementById('tinggi');
+        const b = document.getElementById('b');
+        const c = document.getElementById('c');
+        const d = document.getElementById('d');
+        const labelKeliling = document.getElementById('keliling');
+        const labelLuas = document.getElementById('luas');
+        
+
+        button.addEventListener("click", function () {
+          let keliling = parseInt(a.value)+(b.value)+(c.value)+(d.value)
+          labelKeliling.textContent = keliling + " cm"
+
+          let luas = parseInt(1/2*(a.value)+(b.value))*(tinggi.value)
+          labelLuas.textContent = luas + " cm2"
+        })
+    </script>
+</body>
+</html>

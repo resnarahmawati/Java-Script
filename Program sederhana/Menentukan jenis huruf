@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="kelulusan">
+    <h3>PROGRAM MENENTUKAN JENIS HURUF</h3>
+    <label>Masukkan Huruf</label>
+    <input type="text" id="huruf">
+    <p><span id="output"></span></p>
+  </div>
+  <input type="button" value="Submit" id="Proses" onclick="InputOutput()" />
+
+  <script>
+    function InputOutput() {
+      const huruf = document.getElementById("huruf").value;
+      const vokal = ['a','i','u','e','o'];
+      const konsonan = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z'];
+      bukan_huruf = [vokal,konsonan];
+      const labelOutput = document.getElementById("output");
+      
+      if (vokal.includes(huruf.toLowerCase())) {
+      labelOutput.textContent = `${huruf} merupakan huruf vokal`;
+      } else if (konsonan.includes(huruf.toLowerCase())) {
+      labelOutput.textContent = `${huruf} merupakan huruf konsonan`;
+      } else if (!bukan_huruf.includes(huruf)) {
+      labelOutput.textContent = `${huruf} bukan huruf`;
+      }
+    }
+  </script>
+</body>
+</html>

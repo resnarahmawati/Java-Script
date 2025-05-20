@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <label for="angka">Masukkan Angka</label>
+    <input type="number" id="angka">
+    <p><span id="output"></span></p>
+  </div>
+  <input type="button" value="Submit" id="Proses" onclick="InputOutput()" />
+  <script>
+    function InputOutput(){
+      const angka = document.getElementById("angka").value;
+      const output = document.getElementById("output");
+
+      if(angka %2 == 0){
+        output.textContent = "Angka tersebut Genap"
+      } else {
+        output.textContent = "Angka tersebut Ganjil"
+      }
+    }
+  </script>
+</body>
+</html>

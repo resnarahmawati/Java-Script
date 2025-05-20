@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>PERCEPATAN RATA-RATA</h3>
+    <label for="v1">Masukkan Kecepatan 1</label>
+    <br><input type="number" id="v1">
+    <br><label for="v2">Masukkan Kecepatan 2</label>
+    <br><input type="number" id="v2">
+    <br><label for="t1">Masukkan Waktu 1</label>
+    <br><input type="number" id="t1">
+    <br><label for="t2">Masukkan Waktu 2</label>
+    <br><input type="number" id="t2">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Percepatan Rata-Rata     : <span id="percepatan">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const v1 = document.getElementById('v1');
+        const v2 = document.getElementById('v2');
+        const t1 = document.getElementById('t1');
+        const t2 = document.getElementById('t2');
+        const labelPercepatan = document.getElementById('percepatan');
+        
+
+        button.addEventListener("click", function () {
+          let percepatan = parseInt(v1.value)-(v2.value)/(t2.value)-(t1.value)
+          labelPercepatan.innerHTML = percepatan + " cm<sup>2</sup>"
+        })
+    </script>
+</body>
+</html>

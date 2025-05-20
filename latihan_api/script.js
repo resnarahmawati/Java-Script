@@ -1,5 +1,5 @@
 const content = document.querySelector('#content')
-const url = './data.json'
+const url = 'ff14aaccba6b9dd7ac668aff19eddb1e'
 const hitAPI = async (url) => {
   const api = await fetch(url)
   const data = api.json()
