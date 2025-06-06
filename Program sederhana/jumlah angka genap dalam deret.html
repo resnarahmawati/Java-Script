@@ -1,0 +1,12 @@
+<h3>JUMLAH ANGKA GENAP</h3>
+<label>Masukkan angka dipisah koma:</label>
+<input type="text" id="inputGenap" />
+<input type="button" value="Submit" onclick="hitungGenap()" />
+<p><span id="outputGenap"></span></p>
+<script>
+function hitungGenap() {
+  const angka = document.getElementById("inputGenap").value.split(",");
+  const jumlah = angka.filter(n => Number(n) % 2 === 0).length;
+  document.getElementById("outputGenap").textContent = "Jumlah genap: " + jumlah;
+}
+</script>

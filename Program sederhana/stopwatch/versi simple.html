@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Stopwatch</title>
+</head>
+<body>
+
+  <div id="display">
+    <span id="menit">00</span>:
+    <span id="detik">00</span>:
+    <span id="mili">00</span>
+  </div>
+
+  <button id="start">Start</button>
+  <button id="pause">Pause</button>
+  <button id="reset">Reset</button>
+
+  <script>
+    const m = document.querySelector('#menit');
+    const s = document.querySelector('#detik');
+    const ms = document.querySelector('#mili');
+    const start = document.querySelector('#start');
+    const pause = document.querySelector('#pause');
+    const reset = document.querySelector('#reset');
+
+    let menit = 0, detik = 0, mili = 0, interval, running = false;
+
+    const update = () => {
+      mili += 10;
+      if (mili === 1000) {
+        mili = 0;
+        detik++;
+        if (detik === 60) {
+          detik = 0;
+          menit++;
+        }
+      }
+      m.textContent = String(menit).padStart(2, '0');
+      s.textContent = String(detik).padStart(2, '0');
+      ms.textContent = String(Math.floor(mili / 10)).padStart(2, '0');
+    };
+
+    start.onclick = () => {
+      if (!running) {
+        interval = setInterval(update, 10);
+        running = true;
+      }
+    };
+
+    pause.onclick = () => {
+      clearInterval(interval);
+      running = false;
+    };
+
+    reset.onclick = () => {
+      clearInterval(interval);
+      running = false;
+      menit = detik = mili = 0;
+      m.textContent = s.textContent = ms.textContent = '00';
+    };
+  </script>
+
+</body>
+</html>

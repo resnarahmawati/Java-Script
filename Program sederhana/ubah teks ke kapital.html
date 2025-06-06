@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ubah ke Huruf Besar</title>
+</head>
+<body>
+  <div>
+    <h3>KONVERSI HURUF KE KAPITAL</h3>
+    <label>Masukkan teks:</label>
+    <input type="text" id="inputTeks" />
+    <input type="button" value="Submit" onclick="konversiKapital()" />
+    <p><span id="hasil"></span></p>
+  </div>
+
+  <script>
+    function konversiKapital() {
+      const teks = document.getElementById("inputTeks").value;
+      document.getElementById("hasil").textContent = teks.toUpperCase();
+    }
+  </script>
+</body>
+</html>

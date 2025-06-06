@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h3>Gaya fisika</h3>
+    <label for="massa">Masukkan massa (dalam kg)</label>
+    <input type="number" id="massa">
+    <br><label for="percepatan">Masukkan percepatan (a)</label>
+    <input type="number" id="percepatan">
+    <button id="button" type="button">Hitung</button>
+    <p>
+        Gaya : <span id="gaya">0</span>
+    </p>
+    <script>
+        const button = document.getElementById("button");
+        const massa = document.getElementById("massa");
+        const percepatan = document.getElementById("percepatan");
+        const labelGaya = document.getElementById("gaya");
+
+        button.addEventListener("click", function () {
+          let luas = parseFloat(massa.value) * (percepatan.value)
+          labelGaya.textContent = luas + " N"
+        })
+    </script>
+</body>
+</html>

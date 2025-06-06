@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahun Kabisat</title>
+</head>
+<body>
+  <h3>Cek Tahun Kabisat</h3>
+
+  <label for="tahun">Masukkan tahun (misal: 2024)</label>
+  <input type="number" id="tahun">
+
+  <button id="button" type="button">Cek</button>
+
+  <p>
+      Hasil: <span id="penghitung">-</span>
+  </p>
+
+  <script>
+      const button = document.getElementById("button");
+      const tahunInput = document.getElementById("tahun");
+      const hasilSpan = document.getElementById("penghitung");
+
+      button.addEventListener("click", function () {
+          const tahun = parseInt(tahunInput.value);
+
+          if (isNaN(tahun)) {
+              hasilSpan.textContent = "Masukkan angka tahun yang valid.";
+              return;
+          }
+
+          if ((tahun % 4 === 0 && tahun % 100 !== 0) || tahun % 400 === 0) {
+              hasilSpan.textContent = tahun + " adalah tahun kabisat.";
+          } else {
+              hasilSpan.textContent = tahun + " bukan tahun kabisat.";
+          }
+      });
+  </script>
+</body>
+</html>
